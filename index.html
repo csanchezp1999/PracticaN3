@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Iceberg&family=Modern+Antiqua&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Iceberg&family=Modern+Antiqua&display=swap" rel="stylesheet">
+
+
+</head>
+<header class="navbar-all text-center ">
+  <!-- bg-body-tertiary define el color de fondo -->
+  <nav class="navbar navbar-expand-lg d-inline-block">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="#Enviar_experiencia">Enviar experiencia</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#mejores-viajes">Experiencias</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#historial">Recopilatorio</a>
+          </li>
+
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+<!-- FORM -->
+<section class="form-section">
+  <!-- Cuidado con el margen que genera la clase row -->
+  <div class="title">
+    <h3>¡Cuentanos acerca de su viaje!</h3>
+  </div>
+
+  <div class="formt">
+    <div class="col-md-12 col-sm-12 half-section" id="Enviar_experiencia">
+      <form action="">
+
+        <div class="mb-3">
+          <input type="text" class="form-control" id="ciudad" placeholder="Ciudad">
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" id="pais" placeholder="Pais">
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" id="fecha" placeholder="Fecha para viajar">
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label">Información adicional</label>
+          <textarea class="form-control" id="infoExtra" rows="5" placeholder="¡Cuentanos algo más!"></textarea>
+        </div>
+        <div class="divbutton">
+          <button type="button" onclick="addReviews()" id="botonEnviar">Enviar</button>
+          <div class="text-center">
+            <div class="spinner-border" role="status" id="loader">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+          <!-- Simplemeente para mostrar como un "cargando" -->
+          <div id="msg-confirmacion">
+            <p >Mensaje enviado con éxito!</p>
+          </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  </div>
+</section>
+<section class="recomendaciones" id="mejores-viajes">
+  <div class="recomendaciones-title row gy-5 gx-4 text-center" id="recomendaciones-title">
+    <div class="recomendaciones-title-intro">
+      <h4>EXPERIENCIAS</h4>
+      <p>Explora la inmensa cantidad de lugares a los cuales he viajado, junto a una pequeña nota sobre el lugar en cuestión </p>
+    </div>
+    <!--FIREBASE IMPLEMENTACIÓN -->
+  </div>
+  <div id="list" class="row">
+    
+      
+  </div>
+</section>
+
+
+<!-- Recopilatorio de los paises visitados -->
+<section class="recomendaciones" id="historial">
+  <div class="recomendaciones-title row gy-5 gx-4 text-center" id="recomendaciones-title">
+    <div class="recomendaciones-title-intro-historial">
+      <h4>HISTORIAL</h4>
+      <p>Hecha un vistazo a los lugares que he visitado!</p>
+    </div>
+    
+  </div>
+  <div id="list2" class="row">
+   
+  </div>
+</section>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- Scrip de firebase -->
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+<!-- IMPORTANTE AÑADIR AL FINAL EL SCRIP, SI NO, NO SALE! -->
+<script src="main.js"></script>
+</body>
+
+</html>
